@@ -4,17 +4,18 @@
 #include "producto.h"
 #include <vector>
 
+using namespace std;
+
 class Carrito {
 	private:
-	 int numeroDeObjetos;
-	 string idCompra;
-	 vector<producto> carrito;
+	  int numeroDeObjetos;
+	  string idCompra;
+	  vector<producto> carrito;
 	public:
 		Carrito();
-		void getTotal(producto p);
+		void agregarProducto(producto p);
+		float getTotal();
 		vector<producto> listaProductosSeleccionados();
 };
 
 #endif
-
-

@@ -1,6 +1,6 @@
 #ifndef PRODUCTO_H
 #define PRODUCTO_H
-#include "tienda.h"
+
 #include <string>
 
 using namespace std;

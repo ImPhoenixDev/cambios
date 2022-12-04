@@ -1,11 +1,12 @@
 #ifndef TIENDA_H
 #define TIENDA_H
 
+#include "carrito.h"
+
 class Tienda
 {
 private:
-    //Carrito carrito;
-
+    Carrito carrito;
 public:
     Tienda();
     void verProductos();

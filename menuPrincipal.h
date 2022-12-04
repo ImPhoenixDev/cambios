@@ -6,6 +6,7 @@ class MenuPrincipal {
 		private:
 			Tienda t;
 		public:
+			int ultimaSeleccion;
 			MenuPrincipal(Tienda tienda);
 			void mostrarOpciones();
 			void seleccionarOpcion(); 

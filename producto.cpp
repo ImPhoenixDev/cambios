@@ -1,11 +1,13 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#
-#define NOMBRE_ARCHIVO "stock.csv"
 #include "producto.h"
-using namespace std;
 
+#include <string>
+
+#define NOMBRE_ARCHIVO "stock.csv"
+
+using namespace std;
 
 producto::producto(string idbuscar)
 {

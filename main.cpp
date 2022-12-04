@@ -9,10 +9,13 @@
 using namespace std; 
 
 int main(){
-    Tienda t;
+	Tienda t;
 
 	MenuPrincipal menu(t);
 
-	menu.mostrarOpciones();
-	menu.seleccionarOpcion();
+	while (menu.ultimaSeleccion != 4) {
+		menu.mostrarOpciones();
+		menu.seleccionarOpcion();
+	}
+
 }

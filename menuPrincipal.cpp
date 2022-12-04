@@ -6,6 +6,7 @@ using namespace std;
 MenuPrincipal::MenuPrincipal(Tienda tienda)
 {
     this->t = tienda;
+    ultimaSeleccion = 0;
 }
 
 void MenuPrincipal::salir()
@@ -36,16 +37,20 @@ void MenuPrincipal::seleccionarOpcion(){
     case 1:
         t.verProductos();
         t.seleccionarProducto();
+        ultimaSeleccion = 1;
         break;
     case 2:
         t.verCarrito();
+        ultimaSeleccion = 2;
         break;
     case 3:
         t.terminarCompra();
-    
+        ultimaSeleccion = 3;
+        break;
     case 4:
+        ultimaSeleccion = 4;
         this->MenuPrincipal::salir();
-
+        break;
     }
 
 }

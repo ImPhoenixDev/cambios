@@ -2,6 +2,8 @@
 #include "tienda.h"
 #include "producto.h"
 
+#include <vector>
+
 using namespace std;
 
 Tienda::Tienda()
@@ -49,29 +51,35 @@ void Tienda::seleccionarProducto()
     producto p(idProducto);
     if (p.getStock() > 0)
     {
-    cout << "Se guardo en el carrito: " << p.getNombre() << endl;
+        this->carrito.agregarProducto(p);
+        cout << "Se guardo en el carrito: " << p.getNombre() << endl;
     }
     else
     {
         cout << "Producto agotado." << endl;
     }
-    p.getStock();
 
 }
 
 void Tienda::verCarrito()
 {
-
     cout << endl;
     cout << "Hola buenas terricola" << endl;
     cout << "Este es tu carrito:" << endl;
     cout << "                             " << endl;
     cout << "-----------------------------" << endl;
-    cout << "---------Productos-----------" << endl;
+
+    for (int i = 0; i < this->carrito.listaProductosSeleccionados().size(); i++)
+    {
+        producto p = this->carrito.listaProductosSeleccionados()[i];
+        cout << "-----------------------------" << endl;
+        cout << p.getNombre() << endl;
+        cout << "-----------------------------" << endl;
+    }
     cout << "-----------------------------" << endl;
     cout << "                             " << endl;
     cout << "-----------------------------" << endl;
-    cout << "Total: $" << endl;
+    cout << "Total: $"<<this->carrito.getTotal()<< endl;
     cout << "-----------------------------" << endl;
 }
 
@@ -82,5 +90,20 @@ void Tienda::terminarCompra()
 
 void Tienda::getTicket()
 {
-    cout << "Hola soy un ticket" << endl;
+    cout << endl;
+    cout << "Tu compra fué éxitosa" << endl;
+    cout << "Lista de productos comprados:" << endl;
+    cout << "                             " << endl;
+
+    for (int i = 0; i < this->carrito.listaProductosSeleccionados().size(); i++)
+    {
+        producto p = this->carrito.listaProductosSeleccionados()[i];
+        cout << "-----------------------------" << endl;
+        cout << p.getNombre() << endl;
+        cout << "-----------------------------" << endl;
+    }
+    cout << endl;
+    cout << "-----------------------------" << endl;
+    cout << "Total: $"<< this->carrito.getTotal() << endl;
+    cout << "-----------------------------" << endl;
 }
